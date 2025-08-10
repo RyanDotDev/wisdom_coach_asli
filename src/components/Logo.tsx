@@ -7,7 +7,7 @@ const Logo = () => {
     <div>
       <Link href='/'>
         <Image
-          src='/logos/wisdom_coach_asli_logo.webp'
+          src='/logos/wisdom_coach_asli_logo_with_text.webp'
           alt='Wisdom Coach Asli Logo'
           width={200}
           height={100}
