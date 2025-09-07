@@ -11,7 +11,13 @@
     "postinstall": "rm -f node_modules/uri-js/yarn.lock"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.1",
+    "@mui/material": "^7.3.1",
     "gsap": "^3.13.0",
+    "hamburger-react": "^2.5.2",
+    "lucide-react": "^0.539.0",
     "next": "15.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0"
