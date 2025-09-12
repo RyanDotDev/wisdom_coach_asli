@@ -8,7 +8,7 @@ const Opening = () => {
     <div className='h-auto w-full text-center p-[2rem] pt-[5rem]'>
       <h1 className={`font-serif text-4xl text-[var(--wisdom-red)]`}>Core Values of Childhood</h1>
       <div className='grid justify-items-center justify-around mt-[6rem]
-        gap-y-7 gap-x-11 grid-cols-[repeat(auto-fill,_400px)]'
+        gap-y-7 gap-x-11 lg:grid-cols-[repeat(auto-fill,_400px)] grid-cols-[repeat(auto-fill,_300px)]'
       >
         <div>
           <div className='border border-[var(--wisdom-red)] p-[1rem] rounded-[50%] w-[60px] h-[60px] mx-auto'
@@ -17,7 +17,7 @@ const Opening = () => {
           </div>
           <div className='text-center'>
             <h3 className={`font-serif text-[var(--wisdom-red)] text-[1.5rem] mt-[1rem]`}>The Wisdom System</h3>
-            <p className='text-md mt-[1rem] font-[200] w-[380px]'>
+            <p className='text-md mt-[1rem] font-[200] lg:w-[380px] w-auto'>
               Childhood is the most precious time that we ever experience in our lives and it is imperative that
               that children are nurtured and guided through those times. With most internal struggles dating back 
               to early childhood of some individuals, I make sure to coach children and help give them the courage
@@ -32,7 +32,7 @@ const Opening = () => {
             <HandFist style={{ color: 'var(--wisdom-red)' }} />
           </div>
           <h3 className={`font-serif text-[var(--wisdom-red)] text-[1.5rem] mt-[1rem]`}>Life Coaching for Kids and Teens</h3>
-          <p className='text-md mt-[1rem] font-[200] w-[380px]'>
+          <p className='text-md mt-[1rem] font-[200] lg:w-[380px] w-auto'>
             With most internal struggles dating back to early childhood of some individuals, I make it my mission
             to help bring out the inner strength in children as early as possible, whether that be in their mind, 
             imagination or their self-confidence. Children are extremely bright and imagination is almost like
@@ -50,7 +50,7 @@ const Opening = () => {
             />
           </div>
           <h3 className={`font-serif text-[var(--wisdom-red)] text-[1.5rem] mt-[1rem]`}>Services</h3>
-          <p className='text-md mt-[1rem] font-[200] w-[380px]'>
+          <p className='text-md mt-[1rem] font-[200] lg:w-[380px] w-auto'>
             Just like adulthood, childhood can have their mental barriers as well. The difference is that
             when a child has mental barrier, they often lack the wisdom to express that barrier but ironnically
             have the will to break it, even more so than adults sometimes. If a child can channel that inner power
