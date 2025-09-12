@@ -46,7 +46,7 @@ export const faqs = [
   },
   {
     id: 3,
-    question: "My child doesn’t have a problem...is life coaching for them?",
+    question: "My child doesn’t have a problem... is life coaching for them?",
     answer: (
       <>
         <p>

@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { lato } from '@/lib/utils/fonts';
+import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 const BookingButton = () => {
   const [buttonOnScroll, setButtonOnScroll] = useState<boolean>(false);
+  const router =  useRouter();
   const pathname = usePathname();
+
+  gsap.registerPlugin(ScrollToPlugin);
 
   useEffect(() => {
     const changeButtonOnScroll = () => {
@@ -15,7 +20,7 @@ const BookingButton = () => {
 
       let threshold = 0;
       if (pathname && pathname?.startsWith('/privacy')) {
-        threshold = 1
+        threshold = 200
       } else if (pathname && pathname in scrollThresholds) {
         threshold = scrollThresholds[pathname]
       }
@@ -30,9 +35,25 @@ const BookingButton = () => {
 
   }, [pathname]);
 
+  const handleClick = (sectionId: string) => {
+    if (pathname === '/') {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: {
+          y: `#${sectionId}`,
+          offsetY: 80,
+        },
+        ease: 'power2.out',
+      });
+    } else {
+      router.push(`#${sectionId}`)
+    }
+  };
+
   return (
     <div>
       <button 
+        onClick={() => handleClick('contact')}
         className={`
           ${buttonOnScroll 
             ? 'border-[var(--wisdom-red)] text-[var(--wisdom-red)] hover:text-white hover:bg-[var(--wisdom-red)]' 

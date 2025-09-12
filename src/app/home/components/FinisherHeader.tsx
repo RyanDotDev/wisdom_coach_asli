@@ -1,7 +1,10 @@
 "use client"
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 import { lato } from '@/lib/utils/fonts';
+import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 interface FinisherHeaderOptions {
   position: "fixed" | "absolute";
@@ -30,6 +33,10 @@ declare global {
 }
 
 const FinisherHeader = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  gsap.registerPlugin(ScrollToPlugin);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "/background/finisher-header.es5.min.js"; // Always ensure this file is in the '/public' directory
@@ -64,6 +71,21 @@ const FinisherHeader = () => {
     }
   }, []);
 
+  const handleClick = (sectionId: string) => {
+    if (pathname === '/') {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: {
+          y: `#${sectionId}`,
+          offsetY: 80,
+        },
+        ease: 'power2.out',
+      });
+    } else {
+      router.push(`#${sectionId}`)
+    }
+  };
+
   return (
     <div className='finisher-header w-full h-screen'>
       <Image 
@@ -74,10 +96,10 @@ const FinisherHeader = () => {
         className='object-cover absolute w-full h-full opacity-20'
       />
       <div className='h-full flex items-center justify-center'>
-        <div className='text-center w-[800px]'>
+        <div className='text-center w-[800px] p-[1rem] lg:pt-[0rem] pt-[3rem]'>
     
           {/* HEADING TEXT */}
-          <h1 className={`font-serif text-[2.5rem] text-white`}>
+          <h1 className={`font-serif lg:text-[2.5rem] text-[2rem] text-white`}>
             Helping Children Grow Confident, Resilient and Ready for Life
           </h1>
     
@@ -91,7 +113,7 @@ const FinisherHeader = () => {
                 height={200}
                 className='mx-auto h-auto'
               />
-              <h2 className={`${lato.className} text-[1rem] text-left text-white`}>
+              <h2 className={`${lato.className} lg:text-[1rem] text-[0.8rem] text-left text-white`}>
                 Certified WISDOM® Coach & ICF-accredited coach.<br/>
                 Specialising in mindset coaching that empowers children to believe in themselves, handle
                 challenges, and shine in their own unique way.
@@ -100,7 +122,7 @@ const FinisherHeader = () => {
             <div className='w-auto mx-auto'>
               {/* SUB HEADING */}
               <div className='mt-[1rem]'>
-                <h2 className={`${lato.className} text-[1rem] text-center text-white`}>
+                <h2 className={`${lato.className} lg:text-[1rem] text-[0.8rem] text-center text-white`}>
                   With over a decade of coaching experience, I help children aged 6-12 develop inner strength,
                   confidence and the mindset skills they need to thrive, NOW and in the FUTURE.
                 </h2>
@@ -111,12 +133,14 @@ const FinisherHeader = () => {
           </div>
     
           {/* CALL TO ACTION TEXT */}
-          <h3 className={`${lato.className} text-[1.5rem] text-white`}>
+          <h3 className={`${lato.className} lg:text-[1.5rem] text-[1rem] text-white`}>
             Let&#39;s give your child the tools for life.
           </h3>
           {/* CALL TO ACTION BUTTON */}
-          <button className='relative mt-[1rem] cursor-pointer border-2 border-white text-white
-            p-4 rounded-2xl z-50 hover:bg-white hover:text-blue-400 duration-300'
+          <button 
+            className='relative mt-[1rem] cursor-pointer border-2 border-white text-white
+              p-4 rounded-2xl z-50 hover:bg-white hover:text-blue-400 duration-300'
+            onClick={() => handleClick('contact')}
           >
             <span className={`${lato.className}`}>Enquire today</span>
           </button>

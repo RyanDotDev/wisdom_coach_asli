@@ -6,6 +6,8 @@ import Service from './components/Service';
 import About from './components/About';
 import FAQS from './components/FAQS';
 import FreeStory from './components/FreeStory';
+import Contact from './components/Contact';
+import Approach from './components/Approach';
 
 export default function HomeContainer() {
   const [bgColour, setBgColour] = useState('#FEF9EE');
@@ -59,6 +61,9 @@ export default function HomeContainer() {
         <section id='service'>
           <Service />
         </section>
+        <section id='approach'>
+          <Approach />
+        </section>
         <section id='about'>
           <About />
         </section>
@@ -67,6 +72,9 @@ export default function HomeContainer() {
         </section>
         <section id='free-story'>
           <FreeStory />
+        </section>
+        <section id='contact'>
+          <Contact />
         </section>
       </div>
     </main>

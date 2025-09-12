@@ -25,7 +25,7 @@ const Logo = () => {
       
       let threshold = 0;
       if (pathname && pathname?.startsWith('/privacy')) {
-        threshold = 1
+        threshold = 200
       } else if (pathname && pathname in scrollThresholds) {
         threshold = scrollThresholds[pathname];
       }
@@ -40,7 +40,7 @@ const Logo = () => {
   }, [pathname]);
   
   return (
-    <div >
+    <div className='absolute top-[-0.3rem] flex-shrink-0'>
       <Link href='/' onClick={handleLogoClick}>
       {logoOnScroll ?
         <Image

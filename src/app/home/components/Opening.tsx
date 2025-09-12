@@ -7,7 +7,9 @@ const Opening = () => {
   return (
     <div className='h-auto w-full text-center p-[2rem] pt-[5rem]'>
       <h1 className={`font-serif text-4xl text-[var(--wisdom-red)]`}>Core Values of Childhood</h1>
-      <div className='flex justify-around mt-[6rem]'>
+      <div className='grid justify-items-center justify-around mt-[6rem]
+        gap-y-7 gap-x-11 grid-cols-[repeat(auto-fill,_400px)]'
+      >
         <div>
           <div className='border border-[var(--wisdom-red)] p-[1rem] rounded-[50%] w-[60px] h-[60px] mx-auto'
           >
