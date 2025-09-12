@@ -21,9 +21,13 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          <Link href='/privacy'>
+          <a
+            href='/docs/legal/wisdom_coach_asli_privacy_policy.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             Privacy Policy
-          </Link>
+          </a>
         </div>
         <div>
           <p className='text-[0.8rem]'>© 2025 Copyright. Wisdom Coach Asli. All Rights Reserved.</p>

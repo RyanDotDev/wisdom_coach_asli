@@ -147,7 +147,7 @@ const FreeStory = () => {
           </>
         ) : (
           <div>
-            <h1>Click here to claim your story</h1>
+            <h1>Click here to claim your story.</h1>
             <button 
               onClick={() => {
                 const link = document.createElement("a")

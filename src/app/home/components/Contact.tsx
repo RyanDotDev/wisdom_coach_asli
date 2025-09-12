@@ -19,15 +19,15 @@ const Contact = () => {
     defaultValues: {
       name: "",
       email: "",
-      countryCode: "",
-      phoneNumber: "",
+      /* countryCode: "", */
+      /* phoneNumber: "", */
       message: "",
     }
   });
   const [show, setShow] = useState<boolean>(true);
 
   const watchAll = watch();
-  const isFormReady = watchAll.name && watchAll.email && watchAll.phoneNumber && watchAll.message.length >= 100 && !Object.keys(errors).length;
+  const isFormReady = watchAll.name && watchAll.email && /* watchAll.phoneNumber */ watchAll.message.length >= 100 && !Object.keys(errors).length;
 
   const onSubmit = async (data: FormData) => {
     try {
@@ -123,72 +123,74 @@ const Contact = () => {
                     </>
                   )}
                 />
-                <div className='flex gap-[1rem]'>
-                  {/* Country Code */}
-                  <Controller 
-                    name="countryCode"
-                    control={control}
-                    rules={{ required: "Country code is required "}}
-                    render={({ field }) => (
-                      <div className='flex flex-col'>
-                        <select 
-                          {...field}
-                          className='select appearance-none border p-[1.1rem] rounded-sm border-gray-300'
-                          onBlur={field.onBlur}
-                        >
-                          <option value=''>Country Code</option>
-                          <option value='+1'>+1 (US)</option>
-                          <option value='+44'>+44 (UK)</option>
-                        </select>
-                        {errors.countryCode && 
-                          <p className='text-red-500 text-[0.8rem]'>
-                            {errors.countryCode.message}
-                          </p>
-                        }
-                      </div>
-                    )}
-                  />
+                
+                {/* FOR FUTURE USE IF CLIENT CHANGES MIND
+                  <div className='flex gap-[1rem]'>
+                    <Controller 
+                      name="countryCode"
+                      control={control}
+                      rules={{ required: "Country code is required "}}
+                      render={({ field }) => (
+                        <div className='flex flex-col'>
+                          <select 
+                            {...field}
+                            className='select appearance-none border p-[1.1rem] rounded-sm border-gray-300'
+                            onBlur={field.onBlur}
+                          >
+                            <option value=''>Country Code</option>
+                            <option value='+1'>+1 (US)</option>
+                            <option value='+44'>+44 (UK)</option>
+                          </select>
+                          {errors.countryCode && 
+                            <p className='text-red-500 text-[0.8rem]'>
+                              {errors.countryCode.message}
+                            </p>
+                          }
+                        </div>
+                      )}
+                    />
 
-                  <Controller 
-                    name="phoneNumber"
-                    control={control}
-                    rules={{
-                      required: 'A valid phone number is required',
-                      pattern: {
-                        value: /^[+0-9]{7,15}$/,
-                        message: "Valid phone number is required"
-                      }
-                    }}
-                    render={({ field }) => (
-                      <div className='flex flex-col w-full'>
-                        <input 
-                          {...field}
-                          type="tel"
-                          inputMode="numeric"
-                          pattern="[0-9]*"
-                          placeholder='Phone Number'
-                          className='border p-[1rem] rounded-sm border-gray-300'
-                          autoComplete='off'
-                          onKeyDown={(e) => {
-                            if (!/[0-9]/.test(e.key) && e.key !== "Backspace") {
-                              e.preventDefault()
-                            }
-                          }}
-                          onChange={(e) => {
-                            field.onChange(e);
-                            clearErrors("phoneNumber" as keyof FormData)
-                          }}
-                          onBlur={field.onBlur}
-                        />
-                        {errors.phoneNumber && 
-                          <p className='text-red-500 text-[0.8rem]'>
-                          {errors.phoneNumber.message}
-                          </p>
+                    <Controller 
+                      name="phoneNumber"
+                      control={control}
+                      rules={{
+                        required: 'A valid phone number is required',
+                        pattern: {
+                          value: /^[+0-9]{7,15}$/,
+                          message: "Valid phone number is required"
                         }
-                      </div>
-                    )}
-                  />
-                </div>
+                      }}
+                      render={({ field }) => (
+                        <div className='flex flex-col w-full'>
+                          <input 
+                            {...field}
+                            type="tel"
+                            inputMode="numeric"
+                            pattern="[0-9]*"
+                            placeholder='Phone Number'
+                            className='border p-[1rem] rounded-sm border-gray-300'
+                            autoComplete='off'
+                            onKeyDown={(e) => {
+                              if (!/[0-9]/.test(e.key) && e.key !== "Backspace") {
+                                e.preventDefault()
+                              }
+                            }}
+                            onChange={(e) => {
+                              field.onChange(e);
+                              clearErrors("phoneNumber" as keyof FormData)
+                            }}
+                            onBlur={field.onBlur}
+                          />
+                          {errors.phoneNumber && 
+                            <p className='text-red-500 text-[0.8rem]'>
+                            {errors.phoneNumber.message}
+                            </p>
+                          }
+                        </div>
+                      )}
+                    />
+                  </div>
+                */}
 
                 <Controller 
                   name="message"

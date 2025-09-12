@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import "./globals.css";
+import WhatsApp from "@/components/WhatsApp";
 import Footer from "@/components/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Wisdom Coach Asli",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <WhatsApp />
         <Footer />
       </body>
     </html>

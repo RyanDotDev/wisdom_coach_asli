@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { name, email, countryCode, phoneNumber, message } = req.body;
+    const { name, email, message } = req.body;
 
     // Notification for site owner
     const adminEmail = await resend.emails.send({
@@ -26,7 +26,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone Number:</strong> ${countryCode} ${phoneNumber}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `
