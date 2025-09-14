@@ -27,9 +27,22 @@ const Service = () => {
             <br></br>
             <p>
               WISDOM coaches like myself help children develop powerful mindset skills using coaching stories, engaging
-              questions, activities/art projects and proven <span className='font-bold'>STORY</span> coaching process. With stories, children can see mindset
-              skills in action. This allows them to connect to their own thoughts and feelings so that they can apply the 
-              skills to their own lives.
+              questions, activities/art projects and proven <span className='font-bold'>STORY</span> coaching process. 
+              With stories, children can see mindset skills in action. This allows them to connect to their own thoughts 
+              and feelings so that they can apply the skills to their own lives.
+            </p>
+            <br></br>
+            <p>
+              While being in the program, children learn how to overcome self-doubt, manage mistakes, and deal with peer 
+              pressure so they can develop strong self-esteem and powerful self-confidence. The programs are designed in 
+              such a way that children feel at ease: the sessions are fun, but also teach skills and provide steps to take 
+              action.
+            </p>
+            <br></br>
+            <p>
+              We call this “teaching without preaching” or “learning without lecturing”. There are 5 coaching programs as 
+              part of the WISDOM System for Coaching Children and they teach children 27 powerful mindset skills for creating 
+              happiness, confidence, and success.
             </p>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { Instagram } from '@mui/icons-material';
 const Footer = () => {
   return (
     <div className='bg-[var(--main-creme)] h-auto w-full p-[2rem]'>
-      <div className='text-center flex lg:flex-row flex-col lg:justify-between justify-center'>
+      <div className='text-center flex lg:flex-row flex-col gap-[1rem] lg:justify-between justify-center'>
         <Image 
           src='/logos/wisdom_coach_asli_logo_with_text.webp'
           alt="Wisdom Coach Asli Logo"
