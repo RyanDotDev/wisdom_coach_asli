@@ -54,7 +54,7 @@ export default function HomeContainer() {
       </section>
 
       {/* MAIN CONTENT */}
-      <div style={{ backgroundColor: bgColour, transition: "background-color 0.5s ease" }} >
+      <div style={{ backgroundColor: bgColour, transition: "background-color 0.6s ease" }} >
         <section id='opening'>
           <Opening />
         </section>
