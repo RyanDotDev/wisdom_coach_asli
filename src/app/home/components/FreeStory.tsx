@@ -75,7 +75,7 @@ const FreeStory = () => {
                     rules={{ 
                       required: 'Name needs to be at least 2 characters',
                       pattern: {
-                        value: /^[A-Za-z]{2,16}$/,
+                        value: /^[A-Za-z ]{2,50}$/,
                         message: "Name needs to be at least 2 characters"
                       }
                     }}
