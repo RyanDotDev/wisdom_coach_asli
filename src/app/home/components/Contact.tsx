@@ -196,10 +196,10 @@ const Contact = () => {
                   name="message"
                   control={control}
                   rules={{ 
-                    required: 'Message needs to be 100 characters minimum',
+                    required: 'Message needs to be 50 characters minimum',
                     minLength: {
-                      value: 100,
-                      message: "Message must be at least 100 characters"
+                      value: 50,
+                      message: "Message must be at least 50 characters"
                     }
                   }}
                   render={({ field }) => (
@@ -209,7 +209,7 @@ const Contact = () => {
                         placeholder='Message'
                         rows={10}
                         cols={10}
-                        minLength={100}
+                        minLength={50}
                         className='border p-[1rem] rounded-sm border-gray-300'
                         onChange={(e) => {
                           field.onChange(e);
