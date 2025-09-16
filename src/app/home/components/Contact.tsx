@@ -27,7 +27,7 @@ const Contact = () => {
   const [show, setShow] = useState<boolean>(true);
 
   const watchAll = watch();
-  const isFormReady = watchAll.name && watchAll.email && /* watchAll.phoneNumber */ watchAll.message.length >= 100 && !Object.keys(errors).length;
+  const isFormReady = watchAll.name && watchAll.email && /* watchAll.phoneNumber */ watchAll.message.length >= 50 && !Object.keys(errors).length;
 
   const onSubmit = async (data: FormData) => {
     try {

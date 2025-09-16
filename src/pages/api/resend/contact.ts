@@ -17,11 +17,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       to: process.env.RESEND_USER || '',
       subject: `New Form Submission from ${name}`,
       replyTo: email,
-      headers: {
-        "X-Priority": "1 (Highest)",
-        "X-MSMail-Priority": "High",
-        Importance: "High"
-      },
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
@@ -36,11 +31,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       from: `Wisdom Coach Asli <${process.env.RESEND_USER}>`,
       to: email,
       subject: `Thank your for your enquiry!`,
-      headers: {
-        "X-Priority": "1 (Highest)",
-        "X-MSMail-Priority": "High",
-        Importance: "High"
-      },
       html: `
         <h2>Hi, ${name}</h2>
         <p>Thank you for your message. This email is to confirm you enquiry has been received and you should hear from me soon</p>
